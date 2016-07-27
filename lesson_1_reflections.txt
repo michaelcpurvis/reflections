@@ -1,0 +1,33 @@
+Q: How did viewing a diff between two versions of a file help you see the bug that was introduced?
+
+A: Using 'diff' saved me time by scanning both versions of the file in question, identifying lines which differ between the two files, and drawing my attention to only those lines which are not the same.  This saved me the trouble of reading every line of each file since lines which did not change are not marked with any special identifiers, whereas lines that were removed or added were prepended with '-' or '+', respectively.  It's safe to assume lines that didn't change can't have new bugs in them, so the bug(s) must be somewhere in the highlighted lines only, and the number of highlighted lines is only a small fraction of the total number of lines in the file.  By comparing lines that changed (easy to do on Mac since the two differing lines are printed one after the other) I was quickly able to identify the bug--in this case a typo, a misspelling of the word 'space'.
+
+
+Q: How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+
+A: At some point I may want to revert to an earlier version of the file, or I may want to recover a particular function or even just a single line of code from a past version of the file.  Having easy access to all prior versions of the file makes this simple and fast, and can also save me the trouble of having to remember a particular line of code I may have written weeks ago and am likely to have forgotten, in which case, without easy access to an earlier version, I'd be stuck coming up with a new line of code or function, hoping what I came up with was the same code as I had created weeks ago.
+
+
+Q: What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+
+A: Manually creating commits versus using an automatic system like Google Docs is likely to produce more appropriately-sized and more logical commits, since you can create commits only after logical changes in the code or file rather than every time you're idle for more than a few seconds, which can create 1) too many and 2) arbitrary commits.  Plus, by manually creating commits you can add a commit message, a brief explanation of what change you made, which is not a feature provided by Google Drive.  The only advantage I see of using GDocs is that previous versions are guaranteed to be saved even if you completely forget to make manual commits for an extended period of time.
+
+
+Q: Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+
+A: I think Git is a specialized VCS designed with developers in mind as the primary user base.  Coders are likely to practice OOP principles such as encapsulation and inheritance in which case references to class definitions or methods may occur in several files within a repository.  Google Drive is made for a more general audience, including users who are not developers and may no nothing at all about computer programming, and therefore are less likely to have sets of files related to one another by common lines or even strings.
+
+
+Q: How can you use the commands git log and git diff to view the history of files?
+
+A: Typing 'git log' shows me all(?) commits that have been made since the repository was created, including those made by other authors prior to me joining the project (and thus cloning the repo).  Info provided here includes, for each commit, the commit ID, author, timestamp, and commit message.  To identify and examine changes between two commits, or to find out what the author changed before making a specific commit, I can type 'git diff [commit a id] [commit b id]'.  This will show me which lines have stayed the same (in black, no symbol), which have been removed (in red, minus sign), and which have been added (in green, plus sign).
+
+
+Q: How might using version control make you more confident to make changes that could break something?
+
+A: Knowing that, so long as I make a new commit first, I can change literally anything and still be able to revert back to a stable version gives me complete confidence in making new changes that might break something.
+
+
+Q: Now that you have your workspace set up, what do you want to try using Git for?
+
+A: Well I suppose I should connect the LCRG django project to a git repository and start making commits there.
