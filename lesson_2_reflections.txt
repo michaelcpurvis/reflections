@@ -1,0 +1,8 @@
+Q: What happens when you initialize a repository? Why do you need to do it?
+
+A: A hidden .git folder is created to store metadata about the new repository. The directory we're currently in, unless otherwise specified, becomes the new repo.  However, 'git init' does NOT make an initial commit for us.  This is because 1) maybe we didn't want to commit everything in the directory and 2) if Git makes a commit for us, it doesn't allow us to store a commit message along with the new commit.  We need to do this because a repository is not the same thing as a directory, and in order to take advantage of the tools Git offers, we first need to create a directory and initialize it as a repository.
+
+
+Q: How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+A: The working directory simply refers to the section (folder) of my storage drive I'm currently working in (pwd will tell me my working directory path).  A git repository may refer to my pwd or a subdirectory within my pwd that has been given a .git folder with metadata via the 'git init' command.  The staging area bridges my repository and my pwd by showing me, via 'git status', which files in the working directory have been added to the repository and which have not.
