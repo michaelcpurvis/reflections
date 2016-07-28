@@ -11,3 +11,8 @@ A: For one, an automatic process may pull changes before they're ready to be see
 Q: Describe the differences between forks, clones, and branches. When would you use one instead of another?
 
 A: Cloning gives me a full copy of a repository including the latest commit, previous commits, and log data.  Branching allows me to start with a commit of my choosing and expand the project in a new direction that won't affect the master branch so long as I don't merge back into master.  Forking is like cloning, but can only be done by GitHub, and in addition keeps track of the original contributor to the forked repo, and counts the number of times the original contributor's repo has been forked.  When working within one repository, if I want to say experiment with new features or add a second langauge to the platform, I'd use branch.  If I want to start new work on an existing repository or if I've been added to a new repo as a collaborator, in which case I have permission to modify the repo, I'd use clone.  If I want to start new work on an existing repo and either I'm not a collaborator or I don't have permission to clone the existing repo, I'd use fork.  I can only use fork when logged into GitHub with an existing account.
+
+
+Q: What is the benefit of having a copy of the last known state of the remote stored locally?
+
+A: Ultimately this helps keep the local and remote repos in sync better.  If you know the state origin/master of remote and make a local commit, then push, GH can update the states of both local and remote repos.  Similarly if a change is made to remote and you pull, git can update the states of both local and remote repos.
