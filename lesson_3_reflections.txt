@@ -16,3 +16,8 @@ A: Cloning gives me a full copy of a repository including the latest commit, pre
 Q: What is the benefit of having a copy of the last known state of the remote stored locally?
 
 A: Ultimately this helps keep the local and remote repos in sync better.  If you know the state origin/master of remote and make a local commit, then push, GH can update the states of both local and remote repos.  Similarly if a change is made to remote and you pull, git can update the states of both local and remote repos.
+
+
+Q: How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+A: I suppose first I'd try subversion or mercurial, though I'm unfamiliar with those tools.  Failing that we'd probably switch to Google Docs, but then we'd lose a lot of useful functions like manual commits, commit messages, and the ease of using Terminal and Sublime when writing code.
