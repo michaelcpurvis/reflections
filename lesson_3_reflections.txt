@@ -1,3 +1,8 @@
 Q: When would you want to use a remote repository rather than keeping all your work local?
 
 A: If I wanted to create a remote backup, work easily from different machines (work, home, traveling), or if I wanted to invite others to collaborate, saving my work in a remote repository would be useful in all of these scenarios.   
+
+
+Q: Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+A: For one, an automatic process may pull changes before they're ready to be seen/used, or it may pull more changes than are logically necessary to be stored locally.  By manually choosing to pull changes, I can wait for a new version or feature to be complete, or I can wait to hear from a collaborator that their updates are ready for consumption.
