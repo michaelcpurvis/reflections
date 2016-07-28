@@ -6,3 +6,28 @@ A: A hidden .git folder is created to store metadata about the new repository. T
 Q: How is the staging area different from the working directory and the repository? What value do you think it offers?
 
 A: The working directory simply refers to the section (folder) of my storage drive I'm currently working in (pwd will tell me my working directory path).  A git repository may refer to my pwd or a subdirectory within my pwd that has been given a .git folder with metadata via the 'git init' command.  The staging area bridges my repository and my pwd by showing me, via 'git status', which files in the working directory have been added to the repository and which have not.
+
+
+Q: How can you use the staging area to make sure you have one commit per logical change?
+
+A: When about to commit a new change, run 'git diff --staged'.  This will show you all differences between the files in the most recent commit and the files you are about to commit.  If you see only one logical difference, go ahead and commit with confidence that you're about to introduce only one logical change.  If you see more than one logical difference, think about committing only one file at a time.
+
+
+Q: What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+A: Branching can help in the short term by allowing me to experiment with new features or reworked old features without changing the 'tip', or the most recent commit on the master branch.  Long term branching can make it easier to maintain independent 'versions' of a particular project or app, for example an 'easy-mode' version of the asteroids project or a version of the project in a foreign language.
+
+
+Q: How do the diagrams help you visualize the branch structure?
+
+A: They allow me to see a visual, 2D representation of the repository structure without having to hold commit IDs, commit messages, or branch names in (my) memory.  Given an accurate diagram I can quickly assess reachability and identify any commits that are at risk of being 'forgotten'--those commits I made off of one branch without first making an additional branch before then checking out a separate branch, say master.  So I go back through git log master, checkout an older commit, make changes and save the commit, then go back and checkout master branch again.  Now without the ID of the new commit I made a minute ago I can't get back to that commit--it won't show up in any logs as it's not associated with any branch, even though it knows what its parent branch was.  (Not 100% on this).
+
+
+Q: What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+A: The commit histories of the two branches are merged, 'git log' will list commits from both branches by timestamp, most recent first, the 'tip' now becomes the the commit that merged the two branches.  We show the branches intersecting and becoming one on the diagram because this is the correct way to visualize what's happening within git.
+
+
+Q: What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+A: Automatic merging can save time.  If there are no conflicts, a lot of time is saved.  If there are conflicts, then git tools can help identify those conflicts without you having to read all the way through two similar versions of the same file.  In fact git highlights conflicts areas for you in its attempt at the newly-merged file.  Seems to me there are no advantages to manually committing versus automatic.
